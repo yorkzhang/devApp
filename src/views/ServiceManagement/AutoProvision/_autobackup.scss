@@ -1,0 +1,19 @@
+.wrap-autobackup{
+    input {
+        border: none;
+        outline: none;
+    }
+    input:focus {
+        outline: none;
+    }
+    .formItem, .formSub{
+        border: none;
+        font-size: 0.9rem;
+        border-radius: 0%;
+        background-color: rgba(218, 196, 196, 0.202);
+    }
+    .formInput{
+        border: none;
+        background-color: rgb(251, 224, 224);
+    }
+}

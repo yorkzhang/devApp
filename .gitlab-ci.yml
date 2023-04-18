@@ -1,0 +1,54 @@
+stages: 
+  - build
+  - deploy
+
+build:
+  stage: build
+  tags:
+    - shellrunner
+  only: 
+    - master
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$DEV_KEY")
+  script:
+    - ssh -o StrictHostKeyChecking=no $DEV_USER@$DEV_URL "
+        cd /root/MSP_Project && 
+        ls -al &&
+        echo "準備撈取最新版控" &&
+        git fetch &&
+        echo "準備切換最新版本" &&
+        git checkout origin/master && 
+        echo "刪除本地端master" &&
+        git branch -d master &&
+        echo "再次切回本地master--可不做" &&
+        git checkout master &&
+        echo "版控Log" &&
+        git log -5 &&
+        echo "安裝套件" &&
+        npm install --legacy-peer-deps && 
+        echo "Build 打包" &&
+        npm run build && 
+        echo "打包完畢" &&
+        exit"
+
+
+deploy:
+  stage: deploy
+  tags:
+    - shellrunner
+  only:
+    - master
+  needs:
+    - build
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$DEV_KEY")
+  script:
+    - ssh -o StrictHostKeyChecking=no $DEV_USER@$DEV_URL "
+      echo "刪除上一版" &&
+      sudo rm -rf /var/www/metaage.pro && 
+      echo "複製最新版" &&
+      sudo cp -rp /root/MSP_Project/build/ /var/www/metaage.pro && 
+      exit"
+

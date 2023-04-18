@@ -1,0 +1,18 @@
+.wrap-grafana{
+    padding: 0;
+    margin: 0;
+
+    .grafana-frame{
+        height: calc( 100% - 100px);
+    }
+
+    .grafana-dropdown{
+        position: absolute; 
+        width: 100%;
+        height: 48px;
+        top: 52px;
+        left: 0px;
+        right: 0px;
+        background: #111217; 
+    }
+}

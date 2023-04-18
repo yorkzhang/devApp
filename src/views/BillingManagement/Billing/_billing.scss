@@ -1,0 +1,171 @@
+.wrap-billing{
+    color: rgb(166, 42, 42);
+
+    &--selector{
+        font-size:1rem;
+        display: flex;
+        justify-content: flex-start;
+        margin: 1rem 0rem;
+
+        &--single{
+            margin: 0 0.5rem;
+            padding: 0.5rem 0.5rem;
+            border:none;
+            border-bottom: solid 2px white;
+            border-right: solid 2px white;
+            outline: none;
+            border-radius: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.507);
+            color: rgb(255, 255, 255);
+            box-shadow:
+                inset 2px 2px 3px 0px rgba(0, 0, 0, 0.25), 
+                -1px 1px 1px 0px rgba(200, 200, 200, 0.1);
+            text-shadow: round($number: 0);
+            max-width: 20%;
+            min-width: 17.5%;
+        }
+    }
+
+    &--sum{
+        height: 20%;
+
+        .item-lists{
+            padding: 0.5rem 0rem;
+            margin: 0rem 1rem;
+            height: 100%;
+            font-size: 1.2rem;
+            &--main{
+                background-color: white;
+                border: solid 1px rgb(236, 236, 236);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                margin: 0.5rem;
+                &--title{
+                    color: rgba(0, 0, 0, 0.5);
+                    font-size: 1rem;
+                    position: relative;
+                    width:100%;
+                    white-space: nowrap;
+                }
+
+                &--sum{
+                    margin: 0.25rem;
+                    width: 100%;
+                    font-size: calc(0.5vw + 0.5rem);
+                    text-align: center;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: flex-end;
+
+                    &--number{
+                    }
+                    &--unit{
+                        color: rgba(0, 0, 0, 0.5);
+                        font-size: 0.5rem;
+                    }
+                }
+            }
+            
+            &--sub{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &--dup{
+                    box-shadow: -5px 10px 20px 0px rgba(200, 200, 200, 0.25);
+                    background-color: white;
+                    border-radius: 0.5rem;
+                    width: 95%;
+                    height: 100%;
+                    padding: 5%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    &--title{
+                        color: rgba(0, 0, 0, 0.5);
+                        font-size: 1rem;
+                        position: relative;
+                        width:100%;
+                        white-space: nowrap;
+                    }
+
+                    &--sum{
+                        margin: 0.5rem;
+                        width: 75%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: flex-end;
+                        
+                        &--number{
+                            width:75%;
+                            font-size: calc(2vw + 0.5rem);
+                            text-align: center;
+                        }
+                        &--unit{
+                            width:25%;
+                            color: rgba(0, 0, 0, 0.5);
+                            font-size: 0.5rem;
+                            text-align: right;
+                        }
+                    }
+                }
+                &--dup:hover{
+                    scale: 1.1;
+                    cursor: pointer;
+                }
+                &--dup:active{
+                    box-shadow: -1px 5px 10px 0px rgba(85, 85, 85, 0.05);
+                    scale: 1.05;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+
+        .refreshAPI{
+            margin: 0 0.5rem;
+            padding: 0 1rem;
+            font-size: 0.7rem;
+            font-weight: 200;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            padding-right: 2rem;
+            align-items: center;
+
+            &--text{
+                color:gray; 
+                margin:0 0.5rem 0 0;
+            }
+            &--highlight{
+                color:orange;
+            }
+        }
+    }
+
+    &--form{
+
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:0 10rem;
+
+        .billing-unit{
+            float: right;
+        }
+        .sum-main-number{
+            text-align: center;
+            padding-right: 2rem;
+        }
+        .sum-sub-number{
+            float: right;
+            padding-right: 5rem;
+        }
+    }
+}

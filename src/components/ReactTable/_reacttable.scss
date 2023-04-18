@@ -1,0 +1,16 @@
+.ReactTable--Tip{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+
+    &--icon{
+        color:rgb(255, 165, 0);
+    }
+    &--text{
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+        color:rgb(148, 137, 115);
+    }
+}

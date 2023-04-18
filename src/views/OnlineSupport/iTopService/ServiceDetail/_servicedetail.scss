@@ -1,0 +1,29 @@
+.public_log_container {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.PublicLogModal {
+  .username {
+    margin: 5px 0;
+  }
+  .msgContainer {
+    width: 80%;
+  }
+  .msg {
+    background: #9ff1a1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+  .date {
+    text-align: right;
+  }
+}
+
+.attachmentLink{
+  font-weight: 400;
+  color: black;
+  &:hover,&:focus{
+    color: rgb(57, 57, 57)
+  }
+}
